@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini-Missies: Extreme Workout!</title>
+  <title>Mini Missies</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🏃 Mini-Missies: Extreme Workout! 🏋️</h1>
-    
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    
-    <div class="missie" id="missie">Klik op de knop voor je missie!</div>
-    <button id="nieuweMissie">Nieuwe missie</button>
-    <div class="timer" id="timer"></div>
+
+<canvas id="confetti"></canvas>
+
+<div class="app">
+  <h1>🔥 Mini Missies</h1>
+
+  <div id="streak">Streak: 0 🔥</div>
+
+  <div class="progress-container">
+    <div id="progressBar"></div>
   </div>
 
-  <canvas id="confetti"></canvas>
+  <div class="wheel-container">
+    <div class="wheel" id="wheel"></div>
+    <div class="pointer">▲</div>
+  </div>
 
-  <script src="script.js"></script>
+  <button id="spinButton">DRAAI HET RAD</button>
+
+  <div id="missie">Draai het rad om je missie te krijgen 💪</div>
+  <div id="timer"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
