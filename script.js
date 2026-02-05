@@ -1,17 +1,21 @@
 // MISSIES
 const missies = [
-  "Spring 10 keer op en neer!",
-  "Doe 15 squats!",
-  "Loop 5 minuten rond!",
-  "Maak een mini-dansje van 20 seconden!",
-  "Doe 10 push-ups!",
-  "Strek je armen en benen gedurende 1 minuut!",
-  "Ren op de plek voor 1 minuut!",
-  "Doe 10 jumping jacks!",
-  "Doe een plank van 30 seconden!",
-  "Drink een groot glas water en rek je daarna uit!"
+  "Doe 20 squats + 10 push-ups!",
+  "Ren op de plek voor 2 minuten!",
+  "Doe een plank van 1 minuut!",
+  "Spring 50 keer op en neer!",
+  "Maak een mini-dansroutine van 30 seconden!",
+  "Doe 15 burpees!",
+  "Doe 20 lunges per been!",
+  "Sprint 100 meter of rond je kamer 5 keer!",
+  "Doe 25 jumping jacks + 15 sit-ups!",
+  "Ren op de plek voor 1 minuut, daarna 10 push-ups!",
+  "Doe 1 minuut high knees (heupen hoog!)",
+  "Plank met arm- en beenheffen voor 45 seconden!",
+  "10 burpees + 20 squats + 10 push-ups!",
+  "Maak een mini circuit: 15 jumping jacks, 10 lunges, 10 push-ups",
+  "Ren op de plek en tik je knieën 30 keer hoog op!"
 ];
-
 // ELEMENTEN
 const missieDiv = document.getElementById('missie');
 const knop = document.getElementById('nieuweMissie');
