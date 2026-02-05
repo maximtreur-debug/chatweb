@@ -87,7 +87,6 @@ button:hover {
   color: #555;
 }
 
-/* Confetti canvas */
 #confetti {
   position: fixed;
   top: 0;
