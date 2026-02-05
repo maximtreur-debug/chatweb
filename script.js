@@ -1,4 +1,4 @@
-// MISSIES
+// ----------------------- MISSIES -----------------------
 const missies = [
   "Doe 20 squats + 10 push-ups!",
   "Ren op de plek voor 2 minuten!",
@@ -16,7 +16,8 @@ const missies = [
   "Maak een mini circuit: 15 jumping jacks, 10 lunges, 10 push-ups",
   "Ren op de plek en tik je knieën 30 keer hoog op!"
 ];
-// ELEMENTEN
+
+// ----------------------- ELEMENTEN -----------------------
 const missieDiv = document.getElementById('missie');
 const knop = document.getElementById('nieuweMissie');
 const timerDiv = document.getElementById('timer');
@@ -24,7 +25,7 @@ const progressBar = document.getElementById('progressBar');
 const confettiCanvas = document.getElementById('confetti');
 const ctx = confettiCanvas.getContext('2d');
 
-// RESPONSIVE CANVAS
+// ----------------------- RESPONSIVE CANVAS -----------------------
 function resizeCanvas() {
   confettiCanvas.width = window.innerWidth;
   confettiCanvas.height = window.innerHeight;
@@ -32,23 +33,24 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
-// LOCAL STORAGE
+// ----------------------- LOCAL STORAGE -----------------------
 const storageKey = 'miniMissies';
 const maxClicks = 5;
 const cooldownHours = 12;
+
 let data = JSON.parse(localStorage.getItem(storageKey)) || {
   clicks: 0,
   lastReset: Date.now()
 };
 
-// UPDATE PROGRESS BAR
+// ----------------------- PROGRESS BAR -----------------------
 function updateProgress() {
   const percent = (data.clicks / maxClicks) * 100;
   progressBar.style.width = percent + '%';
 }
 updateProgress();
 
-// RESET LOGICA
+// ----------------------- RESET LOGICA -----------------------
 function checkReset() {
   const now = Date.now();
   if (data.clicks >= maxClicks && now - data.lastReset >= cooldownHours * 60 * 60 * 1000) {
@@ -62,12 +64,12 @@ function checkReset() {
 }
 checkReset();
 
-// LOCAL STORAGE UPDATE
+// ----------------------- LOCAL STORAGE UPDATE -----------------------
 function updateLocalStorage() {
   localStorage.setItem(storageKey, JSON.stringify(data));
 }
 
-// TIMER
+// ----------------------- TIMER -----------------------
 function startCooldown() {
   knop.disabled = true;
   const endTime = data.lastReset + cooldownHours * 60 * 60 * 1000;
@@ -91,7 +93,7 @@ function startCooldown() {
   }, 1000);
 }
 
-// CONFETTI
+// ----------------------- CONFETTI -----------------------
 const confettiParticles = [];
 function createConfetti() {
   for(let i=0;i<150;i++){
@@ -132,7 +134,7 @@ function updateConfetti(){
 }
 drawConfetti();
 
-// NIEUWE MISSIE
+// ----------------------- NIEUWE MISSIE -----------------------
 knop.addEventListener('click', () => {
   checkReset();
   if (data.clicks < maxClicks) {
@@ -150,15 +152,14 @@ knop.addEventListener('click', () => {
   }
 });
 
-// CONFETTI TRIGGER
+// ----------------------- CONFETTI TRIGGER -----------------------
 function triggerConfetti(){
-  // korte burst effect
   confettiParticles.forEach(p=>{
     p.y -= Math.random()*20;
   });
 }
 
-// START TIMER ALS MAX GEBRUIKT
+// ----------------------- START TIMER ALS MAX GEBRUIKT -----------------------
 if (data.clicks >= maxClicks) {
   startCooldown();
 }
